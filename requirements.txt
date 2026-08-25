@@ -1,0 +1,24 @@
+# Core Deep Learning Framework
+torch>=2.0.0
+torchvision>=0.15.0
+
+# YOLO & Computer Vision Frameworks
+ultralytics>=8.0.0
+opencv-python>=4.8.0
+Pillow>=9.5.0
+
+# Interactive Demo & Web Application
+streamlit>=1.30.0
+
+# Data Processing, Numerical Analysis & Visualization
+numpy>=1.23.5
+pandas>=2.0.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+scipy>=1.10.0
+
+# Experiment Tracking & Utilities
+pyyaml>=6.0
+tqdm>=4.65.0
+requests>=2.31.0
+tensorboard>=2.14.0
