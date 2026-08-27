@@ -1,4 +1,4 @@
-# 🚀 Group 9 - Deep Learning: Topic 33
+# 🚀 Group 9 - Deep Learning: YOLO
 ## Study the YOLO Network for Object Detection in Images & Demo Examples
 
 [![Python 3.9+](https://img.shields.io/badge/Python-3.9%2B-blue.svg)](https://www.python.org/)
@@ -12,7 +12,7 @@
 
 * **Môn học:** Deep Learning (Học sâu)
 * **Nhóm thực hiện:** Group 9
-* **Tên đề tài (Topic 33):** **Study the YOLO network for object detection in images. Present some demo examples.**
+* **Tên đề tài (YOLO):** **Study the YOLO network for object detection in images. Present some demo examples.**
 * **Phân chia khối lượng đề tài (3-Tier Workload):**
   * 🥉 **Tầng 1 — Bắt buộc (Core):** Khái niệm Object Detection, nguyên lý YOLO (Backbone, Neck, Head, Bounding Box, IoU, NMS, Confidence Score), phân biệt Training vs Inference, Demo trên ảnh tĩnh.
   * 🥈 **Tầng 2 — Nên có (Standard):** Tiến trình tiến hóa YOLO, Anchor-Free, hàm Loss (CIoU, BCE, DFL), các chỉ số Precision, Recall, mAP, Demo trên video và webcam.
@@ -25,7 +25,7 @@
 Hệ thống được tổ chức thành 2 nhánh song hành bám sát 100% yêu cầu của đề tài:
 
 ```text
-                    TOPIC 33
+                      YOLO
                        │
                        ▼
               YOLO Object Detection

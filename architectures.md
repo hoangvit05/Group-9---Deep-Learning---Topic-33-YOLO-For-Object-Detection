@@ -1,5 +1,5 @@
 # 🏗️ KIẾN TRÚC ĐỀ TÀI & TÀI LIỆU HỌC TẬP CHUYÊN SÂU
-> **Topic 33:** Study the YOLO Network for Object Detection in Images. Present Some Demo Examples.  
+> **YOLO:** Study the YOLO Network for Object Detection in Images. Present Some Demo Examples.  
 > **Môn học:** Deep Learning | **Nhóm thực hiện:** Group 9
 
 ---
@@ -107,7 +107,7 @@ Object Detection
 Hệ thống đề tài được cấu trúc theo mô hình 2 nhánh song hành, hội tụ tại bước đánh giá hiệu năng:
 
 ```text
-                    TOPIC 33
+                      YOLO
                        │
                        ▼
               YOLO Object Detection
@@ -241,7 +241,7 @@ Trong quá trình huấn luyện Object Detection, các kỹ thuật Augmentatio
 * **Intersection over Union (IoU):** Đo lường mức độ trùng khớp giữa Bounding Box dự đoán ($B_{\text{pred}}$) và Ground Truth ($B_{\text{gt}}$):
   $$\text{IoU} = \frac{\text{Area}(B_{\text{pred}} \cap B_{\text{gt}})}{\text{Area}(B_{\text{pred}} \cup B_{\text{gt}})}$$
 * **Confidence Score (Độ tin cậy):** Điểm tin cậy do mô hình dự đoán để đánh giá mức độ chắc chắn của từng Bounding Box (thể hiện xác suất xuất hiện của đối tượng và phân lớp tương ứng). Trong quá trình suy luận, các dự đoán có Confidence Score thấp hơn ngưỡng (`Confidence Threshold`, ví dụ $< 0.25 - 0.40$) sẽ bị loại bỏ sớm để giảm tải tính toán.
-* **Thuật Toán Non-Maximum Suppression (NMS):** Lọc bỏ các Bounding Box dư thừa trùng lặp trên cùng 1 vật thể:
+* **Thuật Toán Non-Maximum Suppression (NMS):** Lọc bỏ các Bounding Box dư thừa trùng lặp trên cùng 1 vật thể (chỉ xét trên các hộp dự đoán **cùng một nhãn phân lớp/class**):
   $$\text{Loại bỏ } B_{\text{other}} \text{ khi: } \text{IoU}(B_{\text{best}}, B_{\text{other}}) > \text{Threshold} \quad (\text{ngưỡng } 0.45 - 0.70)$$
 
 ---
@@ -319,12 +319,12 @@ Hệ thống được thiết kế dạng **mở (Model-Agnostic)**, cho phép n
 ---
 
 ### 8.4. Khung Đánh Giá Thực Nghiệm Thực Tế (Benchmark Trên Thiết Bị Của Nhóm)
-Trong quá trình thực hiện đồ án, nhóm sẽ tiến hành đo đạc trực tiếp các chỉ số hiệu năng thực tế trên phần cứng thử nghiệm để đưa vào Chương 6 của Báo cáo:
+Trong quá trình thực hiện đồ án, nhóm sẽ tiến hành đo đạc trực tiếp các chỉ số hiệu năng thực tế trên phần cứng thử nghiệm để đưa vào Chương 6 của Báo cáo. Đặc biệt, theo format log chuẩn của thư viện Ultralytics YOLOv8, thời gian xử lý sẽ được bóc tách chi tiết thành 3 giai đoạn để phân tích chính xác tốc độ của mô hình:
 
-| Mô Hình Thử Nghiệm | Thiết Bị Chạy (Hardware) | Độ Phân Giải (Resolution) | Thời Gian Xử Lý ($T_{\text{ms}}$) | Tốc Độ (FPS Đo Được) |
-| :--- | :--- | :---: | :---: | :---: |
-| **YOLOv8n** | *CPU Laptop / GPU* | $640 \times 640$ | *[Đo thực tế]* | *[Đo thực tế]* |
-| **YOLOv8s** | *CPU Laptop / GPU* | $640 \times 640$ | *[Đo thực tế]* | *[Đo thực tế]* |
+| Mô Hình Thử Nghiệm | Thiết Bị Chạy | Độ Phân Giải | Tiền Xử Lý ($T_{\text{Pre}}$) | Suy Luận ($T_{\text{Infer}}$) | Hậu Xử Lý ($T_{\text{NMS}}$) | Tổng $T_{\text{total}}$ | Tốc Độ FPS |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **YOLOv8n** | *CPU/GPU* | $640 \times 640$ | *[Đo đạc]* | *[Đo đạc]* | *[Đo đạc]* | *[Tổng 3 pha]* | *[Đo thực tế]* |
+| **YOLOv8s** | *CPU/GPU* | $640 \times 640$ | *[Đo đạc]* | *[Đo đạc]* | *[Đo đạc]* | *[Tổng 3 pha]* | *[Đo thực tế]* |
 
 > [!NOTE]
 > **4 Tiêu chí quyết định chọn mô hình cuối cùng:**
