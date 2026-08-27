@@ -5,6 +5,7 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-ee4c2c.svg)](https://pytorch.org/)
 [![YOLO](https://img.shields.io/badge/YOLO-Object%20Detection-00FFFF.svg)](https://docs.ultralytics.com/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-Demo%20UI-FF4B4B.svg)](https://streamlit.io/)
+```
           INPUT
      Image / Video / Webcam
             |
